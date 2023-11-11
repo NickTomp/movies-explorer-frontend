@@ -34,7 +34,11 @@
 * Cборка проекта при помощи Webpack
 * Маршруты в приложении с помощью React router
 
-## Ссылка на проект
+## Ссылка на репозиторий
+
+<https://github.com/NickTomp/movies-explorer-frontend/tree/level-2>
+
+## Ссылка на макет
 
 <https://movies.ktomp.nomoredomainsrocks.ru>
 
