@@ -5,7 +5,6 @@
 .register__top {
     width: 396px;
     margin: auto;
-    height: 217px;
 }
 
 .register__logo {
@@ -13,7 +12,7 @@
 }
 
 .register__header {
-    margin: 40px auto;
+    margin: 38px auto 36px;
     font-weight: 500;
     font-size: 24px;
 }
@@ -31,16 +30,20 @@
 }
 
 .register__form-input {
-    margin-top: 10px;
+    margin-top: 8px;
     padding: 15px;
     width: 366px;
-    height: 16px;
     border: none;
     border-radius: 8px;
     background-color: #2f2f2f;
     color: #fff;
     font-weight: 400;
     font-size: 13px;
+}
+.register__form-input:focus {
+    outline: none;
+    border: solid 1px rgb(255, 255, 196);
+    border-radius: 3px;
 }
 
 .register__form-error {
@@ -62,13 +65,14 @@
 }
 
 .register__submit-button {
-    margin-top: 69px;
-    height: 45px;
+    margin-top: 67px;
+    min-height: 45px;
     width: 100%;
     background-color: #4285f4;
     color: #fff;
     border: none;
     border-radius: 3px;
+    font-size: 14px;
 }
 
 .register__submit-button:hover {
@@ -97,10 +101,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    .register__top {
-        height: 379px;
-    }
-
     .register__logo {
         margin-top: 232px;
     }
@@ -113,7 +113,6 @@
 @media screen and (max-width: 450px) {
     .register__top {
         width: 260px;
-        height: 253px;
     }
 
     .register__logo {

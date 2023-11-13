@@ -3,30 +3,35 @@
 }
 
 .about__container {
-    padding: 110px 70px;
+    padding: 112px 70px;
 }
 
 .about__header {
+    position: relative;
     margin: 0;
     font-weight: 400;
     font-size: 22px;
+    letter-spacing: calc(22px / -25); 
 }
-
-.about__line {
+.about__header::after {
+    content: " ";
     width: 100%;
-    height: 1px;
+    min-height: 1px;
     background-color: #dadada;
     margin-top: 23px;
+    position: absolute;
+    top: 23px;
+    left: 1px;
 }
 
 .about__text {
     max-width: 1140px;
     width: 100%;
-    padding-top: 70px;
+    padding-top: 94px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: max-content max-content;
-    row-gap: 26px;
+    row-gap: 27px;
     column-gap: 40px;
 }
 
@@ -36,6 +41,7 @@
     width: 100%;
     font-weight: 400;
     font-size: 20px;
+    letter-spacing: calc(20px / -25); 
 }
 
 .about__text-information {
@@ -52,6 +58,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 4fr;
+    grid-template-rows: 36px 17px;
     grid-row-gap: 14px;
     text-align: center;
     font-weight: 500;
@@ -59,34 +66,32 @@
     
 }
 
-.about_time-oneweek {
+.about__time-oneweek {
     margin: 0;
     align-self: start;
     background-color: #3ddc84;
     color: #000;
-    height: 100%;
     width: 100%;
     grid-column: 1;
     grid-row: 1;
 }
 
-.about_time-fourweeks {
+.about__time-fourweeks {
     margin: 0;
-    height: 100%;
     width: 100%;
     background-color: #303030;
     grid-column: 2;
     grid-row: 1;
 }
 
-.about_time-back {
+.about__time-back {
     margin: 0;
     color: #8b8b8b;
     grid-column: 1;
     grid-row: 2;
 }
 
-.about_time-front {
+.about__time-front {
     margin: 0;
     color: #8b8b8b;
     grid-column: 2;
@@ -102,6 +107,8 @@
     .about__text {
         row-gap: 22px;
         column-gap: 30px;
+        padding-top: 94px;
+        row-gap: 25px;
     }
     .about__text-information {
         font-size: 12px;
@@ -109,6 +116,7 @@
     }
     .about__time {
         padding-top: 93px;
+        padding-left: 3px;
     }
     .about__time-text {
         margin: 9px 10px;
@@ -116,29 +124,37 @@
 }
 @media screen and (max-width: 450px) {
     .about__container {
-        padding: 70px 18px;
+        padding: 71px 18px;
+    }
+    .about__header {
+        font-size: 18px;
+        letter-spacing: calc(18px / -25); 
+    }
+    .about__header::after {
+        top: 28px;
     }
     .about__text {
-        padding-top: 60px;
+        padding-top: 89px;
         grid-template-columns: 1fr;
         row-gap: 16px;
     }
     .second-header {
-        margin-top: 30px;
+        margin-top: 40px;
         grid-row: 3;
     }
     .about__text-header {
         width: 284px;
         font-size: 18px;
+        line-height: 22px;
+        letter-spacing: calc(18px / -25); 
     }
     .about__text-information {
         font-size: 11px;
-    }
-    .about__line {
-        margin-top: 28px;
+        line-height: 16px;
     }
     .about__time {
         padding-top: 60px;
+        padding-left: 0;
         grid-row-gap: 10px;
         font-size: 11px;
     }

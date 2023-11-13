@@ -4,4 +4,6 @@
   margin: 0 auto;
   font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
   color: #fff;
+  display: flex;
+  flex-direction: column;
 }

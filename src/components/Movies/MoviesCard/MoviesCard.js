@@ -18,14 +18,14 @@ function MoviesCard(props) {
                     isSaved ?
                         props.onMyAccount ?
                             <button className='card__state-delete-button' onClick={deleteFilm}><img className='card__state-img' src={deleteImg} alt='delete' /></button>
-                            : <img className='card__state-img' src={SavedImg} alt='saved' />
+                            : <img className='card__state-img' src={SavedImg} alt='Картинка фильма' />
                         : <button className='card__state-button' onClick={saveFilm}><p className='card__state-text'>Сохранить</p></button>
                 }
             </div>
             <img className='card__image' src={props.el.img} alt={props.el.name} />
             <div className='card__caption'>
-                <p className='card__caption_name'>{props.el.name}</p>
-                <div className='card__caption_time'>{props.el.time}</div>
+                <h2 className='card__caption-name'>{props.el.name}</h2>
+                <div className='card__caption-time'>{props.el.time}</div>
             </div>
         </li>
     );

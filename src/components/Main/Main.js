@@ -9,13 +9,15 @@ import Footer from '../Footer/Footer.js';
 function Main(props) {
     return (
         <>
-        {props.children}
-        <Promo />
-        <AboutProject />
-        <Techs />
-        <AboutMe />
-        <Portfolio />
-        <Footer />
+            <main>
+                {props.children}
+                <Promo />
+                <AboutProject />
+                <Techs />
+                <AboutMe />
+                <Portfolio />
+            </main>
+            <Footer />
         </>
     )
 }

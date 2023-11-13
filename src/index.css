@@ -1,6 +1,6 @@
 /*Импорт глобальных стилей*/
 @import url(./vendor/normalize.css);
 @import url(./fonts/fonts.css);
-#root {
-    background-color: #424242;
+.body {
+    background-color: #202020;
 }

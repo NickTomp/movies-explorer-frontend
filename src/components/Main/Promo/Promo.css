@@ -4,7 +4,6 @@
 }
 
 .promo__container {
-    height: 493px;
     background-color: #272727;
     border-radius: 10px;
 }
@@ -13,24 +12,24 @@
     margin: auto;
     padding-top: 160px;
     width: 730px;
-    height: 116px;
     font-weight: 400;
     font-size: 50px;
     line-height: 58px;
+    letter-spacing: calc(50px / -25); 
     text-align: center;
 }
 
 .promo__menu {
     margin: auto;
-    padding-top: 161px;
+    padding-top: 151px;
+    padding-bottom: 30px;
     width: fit-content;
     display: flex;
     gap: 10px;
 }
-
 .promo__button {
     width: 96px;
-    height: 36px;
+    min-height: 36px;
     background-color: #303030;
     border: none;
     border-radius: 10px;
@@ -41,21 +40,19 @@
 }
 .promo__button:hover {
     opacity: .8;
+    cursor: pointer;
 }
 @media screen and (max-width: 800px) {
     .promo {
         padding: 20px 20px 0;
     }
-    .promo__container {
-        height: 834px;
-    }
     .promo__text {
         padding-top: 350px;
         max-width: 680px;
         width: 93.4%;
-        height: 104px;
         font-size: 40px;
         line-height: 52px;
+        letter-spacing: calc(40px / -25);
     }
     .promo__menu {
         padding-top: 314px;
@@ -66,22 +63,20 @@
     .promo {
         padding: 14px 14px 0;
     }
-    .promo__container {
-        height: 586px;
-    }
     .promo__text {
         padding-top: 220px;
         width: 292px;
-        height: 111px;
         font-size: 29px;
         line-height: 37px;
+        letter-spacing: calc(29px / -25);
     }
     .promo__menu {
         padding-top: 212px;
+        padding-bottom: 17px;
+        gap: 6px;
     }
     .promo__button {
         width: 82px;
-        height: 26px;
         font-size: 10px;
         line-height: 16px;
     }

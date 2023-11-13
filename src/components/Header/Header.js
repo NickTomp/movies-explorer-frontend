@@ -45,15 +45,15 @@ function Header(props) {
                 <NavLink to="/movies" className={({ isActive }) => `${isActive ? "header__menu-link header__menu-link_active" : "header__menu-link"}`}>Фильмы</NavLink>
                 <NavLink to="/saved-movies" className={({ isActive }) => `${isActive ? "header__menu-link header__menu-link_active" : "header__menu-link"}`}>Сохранённые фильмы</NavLink>
               </nav>
-              <div className='header__button-set'>
+              <nav className='header__button-set'>
                 <button className='header__account-button' onClick={handleAccountClick}>Аккаунт</button>
-              </div>
+              </nav>
             </>
             :
-            <div className='header__button-set'>
+            <nav className='header__button-set'>
               <button className='header__register-button' onClick={handleRegisterClick}>Регистрация</button>
               <button className='header__signin-button' onClick={handleLoginClick}>Войти</button>
-            </div>
+            </nav>
         }
       </header>
     );
@@ -71,10 +71,10 @@ function Header(props) {
               setIsActive={setIsActive} />
           </>
           :
-          <div className='header__button-set'>
+          <nav className='header__button-set'>
             <button className='header__register-button' onClick={handleRegisterClick}>Регистрация</button>
             <button className='header__signin-button' onClick={handleLoginClick}>Войти</button>
-          </div>
+          </nav>
       }
     </header>
   );

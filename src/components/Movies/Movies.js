@@ -6,10 +6,12 @@ import Preloader from './Preloader/Preloader.js';
 function Movies(props) {
     return (
         <>
-            <Preloader />
-            {props.children}
-            <SearchForm />
-            <MoviesCardList more={true} onMyAccount={false} />
+            <main>
+                <Preloader />
+                {props.children}
+                <SearchForm />
+                <MoviesCardList more={true} onMyAccount={false} />
+            </main>
             <Footer />
         </>
     );
