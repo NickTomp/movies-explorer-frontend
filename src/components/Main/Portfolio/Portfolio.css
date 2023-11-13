@@ -1,0 +1,106 @@
+.portfolio {
+    background-color: #202020;
+}
+
+.portfolio__container {
+    max-width: 1140px;
+    width: 89%;
+    margin: 0 auto;
+}
+
+.portfolio__header {
+    margin: 0 0 30px 0;
+    color: #8b8b8b;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+}
+.portfolio__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.portfolio__link-unit {
+    margin: 0;
+    padding: 0;
+}
+.portfolio__link-unit:nth-of-type(1) {
+    margin-top: 50px;
+}
+.portfolio__link-unit:nth-of-type(2) {
+    margin-top: 20px;
+}
+.portfolio__link-unit:nth-of-type(3) {
+    margin-top: 20px;
+}
+.portfolio__link {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50px;
+    color: #fff;
+    margin: 0;
+    letter-spacing: calc(30px / -25);
+    display: flex;
+    justify-content: space-between;
+}
+.portfolio__link_central {
+    margin: 0;
+    padding: 20px 0 19px;
+    border-top: 1px solid #424242;
+    border-bottom: 1px solid #424242;
+}
+
+.portfolio__link:nth-of-type(3) {
+    padding-bottom: 145px;
+    margin: 0;
+}
+.portfolio__link:hover {
+    opacity: .7;
+}
+.portfolio__link-img {
+    width: 20px;
+    padding-right: 4px;
+    align-self: center;
+}
+.portfolio__link-img:hover {
+    opacity: .7;
+}
+@media screen and (max-width: 800px) {
+    .portfolio__container {
+        width: 87%;
+    }
+    .portfolio__link {
+        font-size: 28px;
+        margin: 20px 0;
+    }
+    .portfolio__link-img {
+        width: 18px;
+    }
+    .portfolio__link:nth-of-type(3) {
+        padding-bottom: 90px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .portfolio__container {
+        width: 91%;
+    }
+    .portfolio__header {
+        margin: 0 0 20px 0;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .portfolio__link {
+        font-size: 18px;
+        line-height: 28px;
+        margin: 20px 0;
+        letter-spacing: calc(18px / -25);
+    }
+    .portfolio__link-img {
+        width: 10px;
+    }
+    .portfolio__link:nth-of-type(3) {
+        padding-bottom: 70px;
+    }
+}
