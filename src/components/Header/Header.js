@@ -37,7 +37,7 @@ function Header(props) {
   if (width > breakpoint) {
     return (
       <header className="header">
-        <Link to="/"><img className='header__logo' alt='mesto' src={logo} /></Link>
+        <Link to="/"><img className='header__logo' alt='Логотип' src={logo} /></Link>
         {
           tempIsLoggedIn ?
             <>
@@ -46,13 +46,13 @@ function Header(props) {
                 <NavLink to="/saved-movies" className={({ isActive }) => `${isActive ? "header__menu-link header__menu-link_active" : "header__menu-link"}`}>Сохранённые фильмы</NavLink>
               </nav>
               <nav className='header__button-set'>
-                <button className='header__account-button' onClick={handleAccountClick}>Аккаунт</button>
+                <button type='button' className='header__account-button' onClick={handleAccountClick}>Аккаунт</button>
               </nav>
             </>
             :
             <nav className='header__button-set'>
-              <button className='header__register-button' onClick={handleRegisterClick}>Регистрация</button>
-              <button className='header__signin-button' onClick={handleLoginClick}>Войти</button>
+              <button type='button' className='header__register-button' onClick={handleRegisterClick}>Регистрация</button>
+              <button type='button' className='header__signin-button' onClick={handleLoginClick}>Войти</button>
             </nav>
         }
       </header>
@@ -60,7 +60,7 @@ function Header(props) {
   };
   return (
     <header className="header">
-      <Link to="/"><img className='header__logo' alt='mesto' src={logo} /></Link>
+      <Link to="/"><img className='header__logo' alt='Логотип' src={logo} /></Link>
       {
         tempIsLoggedIn ?
           <>
@@ -72,8 +72,8 @@ function Header(props) {
           </>
           :
           <nav className='header__button-set'>
-            <button className='header__register-button' onClick={handleRegisterClick}>Регистрация</button>
-            <button className='header__signin-button' onClick={handleLoginClick}>Войти</button>
+            <button type='button' className='header__register-button' onClick={handleRegisterClick}>Регистрация</button>
+            <button type='button' className='header__signin-button' onClick={handleLoginClick}>Войти</button>
           </nav>
       }
     </header>

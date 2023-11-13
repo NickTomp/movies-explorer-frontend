@@ -12,6 +12,7 @@
 }
 .header__logo:hover {
     cursor: pointer;
+    opacity: .7;
 }
 .header__menu {
     margin: 28px 0 28px 5%;
@@ -120,6 +121,10 @@
 @media screen and (max-width: 450px) {
     .header__menu-button {
         margin-right: 15px;
+        width: 39px;
+        min-height: 43px;
+        background-position: center;
+        background-size: contain;
     }
 
     .header__logo {

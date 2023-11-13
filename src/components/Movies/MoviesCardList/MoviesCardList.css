@@ -46,7 +46,7 @@
     .card-list__elements {
         padding-bottom: 12px;
         grid-template-columns: 1fr 1fr;
-        gap: 60px 30px;
+        gap: 45px 30px;
     }
 }
 @media screen and (max-width: 740px) {
@@ -57,7 +57,7 @@
     .card-list__elements {
         padding-bottom: 12px;
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 36px;
     }
     .card-list__more-button {
         width: 240px;

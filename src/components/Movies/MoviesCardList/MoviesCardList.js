@@ -14,7 +14,7 @@ function MoviesCardList(props) {
     },
     {
         img: 'https://steamuserimages-a.akamaihd.net/ugc/1806508520590495539/14FA2FA73B925376B2777025EBAF07B489659665/?imw=512&amp;imh=384&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true',
-        name: ' another test kotik super looooooooooooooooooong name',
+        name: ' another test kotik',
         time: '1ч 23м'
     },
     {
@@ -35,7 +35,7 @@ function MoviesCardList(props) {
     },
     {
         img: 'https://steamuserimages-a.akamaihd.net/ugc/1806508520590495539/14FA2FA73B925376B2777025EBAF07B489659665/?imw=512&amp;imh=384&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true',
-        name: ' another test kotik super looooooooooooooooooong name',
+        name: ' another test kotik',
         time: '1ч 23м'
     },
     {
@@ -86,7 +86,7 @@ function MoviesCardList(props) {
     },
     {
         img: 'https://wallbox.ru/resize/1024x768/wallpapers/main2/202118/162006107660902b9462e819.32124950.jpg',
-        name: 'another saved kotik super looooooooooooooooooong name',
+        name: 'another saved kotik',
         time: '1ч 23м'
     },
     ]
@@ -107,7 +107,7 @@ function MoviesCardList(props) {
                     <MoviesCard onMyAccount={props.onMyAccount} el={card} key={Math.random()} />
                 ))}
             </ul>
-            {props.more ? <button type='button' className='card-list__more-button' onClick={temporaryJoke}><p className='card-list__more-text'>Ещё</p></button> : <div className='card-list__no-button'></div>}
+            {props.more ? <button type='button' className='card-list__more-button' onClick={temporaryJoke}><span className='card-list__more-text'>Ещё</span></button> : <div className='card-list__no-button'></div>}
         </section>
     );
 }

@@ -23,7 +23,7 @@ function Register(props) {
     return (
         <main className='register'>
             <div className='register__top'>
-                <Link to="/"><img className='register__logo' alt='mesto' src={logo} /></Link>
+                <Link to="/"><img className='register__logo' alt='логотип' src={logo} /></Link>
                 <h1 className='register__header'>{props.header}</h1>
             </div>
 

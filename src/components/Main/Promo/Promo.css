@@ -24,8 +24,6 @@
     padding-top: 151px;
     padding-bottom: 30px;
     width: fit-content;
-    display: flex;
-    gap: 10px;
 }
 .promo__button {
     width: 96px;
@@ -41,6 +39,16 @@
 .promo__button:hover {
     opacity: .8;
     cursor: pointer;
+}
+.promo__buttons{
+    all: unset;
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+.promo__button-unit {
+display: inline;
 }
 @media screen and (max-width: 800px) {
     .promo {

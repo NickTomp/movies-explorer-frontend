@@ -18,7 +18,7 @@ function Header(props) {
           <NavLink to={'/'} onClick={handleCloseMenu} className={({ isActive }) => `${isActive ? "menu__link menu__link_active" : "menu__link"}`}>Главная</NavLink>
           <NavLink to={'/movies'} className={({ isActive }) => `${isActive ? "menu__link menu__link_active" : "menu__link"}`} >Фильмы</NavLink>
           <NavLink to={'/saved-movies'} className={({ isActive }) => `${isActive ? "menu__link menu__link_active" : "menu__link"}`} >Сохранённые фильмы</NavLink>
-          <button className='menu__account-button' onClick={handleAccountClick}>Аккаунт</button>
+          <button type='button' className='menu__account-button' onClick={handleAccountClick}>Аккаунт</button>
         </div>
       </div>
     </nav>

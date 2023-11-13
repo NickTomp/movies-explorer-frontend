@@ -49,7 +49,7 @@ function Profile(props) {
                         <input
                             className='profile__input'
                             type='text'
-                            id="profile-name"
+                            id="profile-email"
                             name="name"
                             required="true"
                             onChange={handleSetEmail}

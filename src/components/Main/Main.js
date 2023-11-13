@@ -9,8 +9,8 @@ import Footer from '../Footer/Footer.js';
 function Main(props) {
     return (
         <>
+            {props.children}
             <main>
-                {props.children}
                 <Promo />
                 <AboutProject />
                 <Techs />

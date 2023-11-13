@@ -19,7 +19,7 @@ function Login(props) {
     return (
         <main className='login'>
             <div className='login__top'>
-                <Link to="/"><img className='login__logo' alt='mesto' src={logo} /></Link>
+                <Link to="/"><img className='login__logo' alt='логотип' src={logo} /></Link>
                 <h1 className='login__header'>{props.header}</h1>
             </div>
             <form className='login__form' onSubmit={handleSubmit} name={props.name} noValidate="">

@@ -11,6 +11,11 @@
     margin-top: 70px;
 }
 
+.login__logo:hover {
+    opacity: .7;
+    cursor: pointer;
+}
+
 .login__header {
     margin: 38px auto 36px;
     font-weight: 500;
@@ -40,11 +45,13 @@
     font-weight: 400;
     font-size: 13px;
 }
+
 .login__form-input:focus {
     outline: none;
     border: solid 1px rgb(255, 255, 196);
     border-radius: 3px;
 }
+
 .login__form-error {
     color: #ee3465;
     font-weight: 400;
@@ -92,6 +99,7 @@
 .login__link {
     text-decoration: none;
     color: #4285f4;
+    margin-left: 5px;
 }
 
 .login__link:hover {
@@ -102,6 +110,7 @@
     .login__logo {
         margin-top: 232px;
     }
+
     .login__caption {
         padding-bottom: 232px;
     }
@@ -117,7 +126,7 @@
     }
 
     .login__header {
-        margin: 50px auto 80px;
+        margin: 48px auto 74px;
         font-weight: 500;
         font-size: 24px;
         text-align: center;
@@ -137,6 +146,7 @@
 
     .login__submit-button {
         margin-top: 267px;
+        font-size: 12px;
     }
 
     .login__caption {
@@ -144,5 +154,9 @@
         padding-bottom: 30px;
         font-size: 12px;
         line-height: 15px;
+    }
+
+    .login__form-error {
+        margin: 2px auto 0;
     }
 }

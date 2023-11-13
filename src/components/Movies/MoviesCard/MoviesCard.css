@@ -11,6 +11,7 @@
 .card__state {
     position: absolute;
     min-height: 100%;
+    max-width: 360px;
     width: 100%;
     opacity: 0;
 }
@@ -42,18 +43,22 @@
     padding: 0;
     background-color: #313131;
 }
+
 .card__state-button:hover {
     cursor: pointer;
     opacity: .8;
 }
+
 .card__state-delete-button {
     border: none;
     padding: 0;
 }
+
 .card__state-delete-button:hover {
     cursor: pointer;
     opacity: .8;
 }
+
 .card__state-text {
     margin: 0;
     width: 100%;
@@ -79,8 +84,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 14px 0;
+    margin: 10px auto 0;
     align-self: normal;
+    max-width: 360px;
+    width: 100%;
 }
 
 .card__caption-name {
@@ -103,35 +110,54 @@
     line-height: 10px;
     border-radius: 3px;
 }
+
 @media screen and (max-width: 800px) {
     .card__image {
         max-width: 339px;
+        max-height: 190px;
     }
+
     .card__caption {
-        margin: 25px 0 0;
+        max-width: 339px;
+        width: 100%;
+        margin: 25px auto 0;
+    }
+
+    .card__state {
+        max-width: 339px;
     }
 }
+
 @media screen and (max-width: 420px) {
     .card {
         width: 300px;
     }
+
     .card__image {
-       max-width: 300px;
+        max-width: 300px;
+        max-height: 168px;
         margin: auto;
     }
+
     .card__caption-name {
         font-size: 12px;
         width: 240px;
     }
-    .card__state_button {
+
+    .card__state-button {
         top: 10px;
         right: 10px;
     }
-    .card__state_img {
+
+    .card__state-img {
         top: 10px;
         right: 10px;
     }
+
     .card__caption {
         margin-top: 16px;
+    }
+    .card__state {
+        max-width: 300px;
     }
 }
