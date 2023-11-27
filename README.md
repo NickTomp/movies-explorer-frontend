@@ -39,6 +39,10 @@
 
 <https://github.com/NickTomp/movies-explorer-frontend/tree/level-3>
 
+## Ссылка на pull request
+
+<https://github.com/NickTomp/movies-explorer-frontend/pull/3>
+
 ## Ссылка на реализованный сайт
 
 <https://movies.ktomp.nomoredomainsrocks.ru>
