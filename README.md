@@ -17,6 +17,7 @@
 * Роуты, ссылки, переходы по ним
 * Регистрация, авторизация
 * Различные анимации
+* Функциональность
 
 ## Технологии, применённые в проекте
 
@@ -36,7 +37,7 @@
 
 ## Ссылка на репозиторий
 
-<https://github.com/NickTomp/movies-explorer-frontend/tree/level-2>
+<https://github.com/NickTomp/movies-explorer-frontend/tree/level-3>
 
 ## Ссылка на реализованный сайт
 

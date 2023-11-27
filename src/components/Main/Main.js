@@ -6,7 +6,7 @@ import Portfolio from './Portfolio/Portfolio.js';
 import AboutProject from './AboutProject/AboutProject.js';
 import Footer from '../Footer/Footer.js';
 
-function Main(props) {
+function    Main(props) {
     return (
         <>
             {props.children}

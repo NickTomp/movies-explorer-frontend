@@ -64,6 +64,9 @@
 .login__form-error_active {
     opacity: 1;
 }
+.login__api-error {
+    margin-top: 170px;
+}
 
 .login__bottom {
     width: 396px;
@@ -71,7 +74,7 @@
 }
 
 .login__submit-button {
-    margin-top: 178px;
+    margin-top: 10px;
     min-height: 45px;
     width: 100%;
     background-color: #4285f4;
@@ -80,12 +83,17 @@
     border-radius: 3px;
     font-size: 14px;
 }
-
+.login__submit-button_disabled {
+    background-color: grey;
+}
 .login__submit-button:hover {
-    cursor: pointer;
     opacity: .8;
 }
-
+.login__submit-button_disabled:hover {
+    background-color: grey;
+    cursor: not-allowed;
+    opacity: 1;
+}
 .login__caption {
     margin: 16px auto 0;
     padding-bottom: 70px;

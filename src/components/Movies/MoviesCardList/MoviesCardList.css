@@ -5,6 +5,7 @@
 }
 
 .card-list__elements {
+    position: relative;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -12,6 +13,11 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 58px 2.6%;
     grid-auto-rows: max-content;
+}
+.card-list__error {
+    width: 100%;
+    text-align: center;
+    grid-column: 2;
 }
 .card-list__more-button {
     margin: 50px auto 0;

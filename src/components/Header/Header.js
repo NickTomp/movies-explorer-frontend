@@ -3,6 +3,7 @@ import logo from '../../images/logo.svg';
 import React from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import Menu from './Menu/Menu.js';
+import { loggedInContext } from '../../contexts/AuthContext';
 
 function Header(props) {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ function Header(props) {
   function handleOpenMenu() {
     setIsActive(true);
   }
-  const tempIsLoggedIn = true;
+  const isLoggedIn = React.useContext(loggedInContext);
 
 
 
@@ -39,7 +40,7 @@ function Header(props) {
       <header className="header">
         <Link to="/"><img className='header__logo' alt='Логотип' src={logo} /></Link>
         {
-          tempIsLoggedIn ?
+          isLoggedIn ?
             <>
               <nav className='header__menu'>
                 <NavLink to="/movies" className={({ isActive }) => `${isActive ? "header__menu-link header__menu-link_active" : "header__menu-link"}`}>Фильмы</NavLink>
@@ -62,7 +63,7 @@ function Header(props) {
     <header className="header">
       <Link to="/"><img className='header__logo' alt='Логотип' src={logo} /></Link>
       {
-        tempIsLoggedIn ?
+        isLoggedIn ?
           <>
             <button type='button' className='header__menu-button' onClick={handleOpenMenu} />
             <Menu
