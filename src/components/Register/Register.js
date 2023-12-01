@@ -53,7 +53,17 @@ function Register(props) {
     }
     function handleSubmit(e) {
         e.preventDefault();
-        props.onSubmit(password, email, name)
+        handleDisableButton();
+        if (isPasswordValid && isEmailValid && isNameValid) {
+            props.onSubmit(password, email, name)
+        } else {return false}
+        
+    }
+    function handleDisableButton() {
+        setIsEmailValid(false);
+        setTimeout(() => {
+            setIsEmailValid(true)
+        }, 2000);
     }
     function handleClearApiError() {
         props.clearApiError();

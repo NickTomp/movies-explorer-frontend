@@ -55,6 +55,9 @@ function App() {
             handleValidate();
             clearApiError();
           })
+          .then(() => {
+            navigate('/movies', { replace: true });
+          })
       })
       .catch((err) => setApiError(`${err}`));
   }
@@ -63,6 +66,9 @@ function App() {
       .then(() => {
         handleValidate();
         clearApiError();
+      })
+      .then(() => {
+        navigate('/movies', { replace: true });
       })
       .catch((err) => setApiError(`${err}`));
   }
@@ -81,7 +87,9 @@ function App() {
         setIsLoggedIn(true);
         setCurrentUser({ name: data.name, email: data.email, _id: data._id });
         getSavedCardsArray();
-        navigate('/movies', { replace: true });
+      })
+      .then(() => {
+        navigate('/', { replace: true });
       })
       .catch((err) => alert(`${err} - не удалось авторизоваться, выполните вход!`));
   }
@@ -90,7 +98,10 @@ function App() {
       .then(() => {
         localStorage.clear();
         setStoreCardsArray([]);
-        navigate('/signin', { replace: true });
+        setIsLoggedIn(false);
+      })
+      .then(() => {
+        navigate('/', { replace: true });
       })
       .catch((err) => alert(`${err} - не удалось Выйти из аккаунта`));
 
@@ -125,13 +136,18 @@ function App() {
       }, 1000))
       .catch((err) => alert(`${err} - не удалось загрузить карточки`), setIsPreloaderActive(false));
   }
+  function handleShowSavedCards(setCardsArray) {
+    setCardsArray(storeCardsArray)
+  }
   function handleCardsFilter(isActive, locale) {
+
     if (locale === 'basic') {
       setMainCardsArray(filter(initCardsArray, isActive, locale));
     }
     else if (locale === 'saved') { setSavedCardsArray(filter(storeCardsArray, isActive, locale)) }
+
   }
-  function handleCardLike(country, director, duration, year, description, image, trailerLink, nameRU, nameEN, thumbnail, movieId) {
+  function handleCardLike(setIsLiked, country, director, duration, year, description, image, trailerLink, nameRU, nameEN, thumbnail, movieId) {
     mainApi.createCard(country, director, duration, year, description, image, trailerLink, nameRU, nameEN, thumbnail, movieId)
       .then((newCard) => {
         const newCardObject = {
@@ -154,29 +170,33 @@ function App() {
             }
           }
         }
-        setMainCardsArray(mainCardsArray.map((c) => c.id === movieId ? newCardObject : c))
-
+        setMainCardsArray(mainCardsArray.map((c) => c.id === movieId ? newCardObject : c));
+        getSavedCardsArray();
+        setIsLiked(true)
       })
       .catch((err) => alert(`${err} - не удалось сохранить карточку`));
   }
-  function handleCardDelete(cardId) {
+  function handleCardDelete(setIsLiked, cardId) {
     mainApi.deleteCard(cardId)
       .then((card) => {
         const newArray = savedCardsArray.filter(item => item._id !== card._id);
         setStoreCardsArray(newArray);
         setSavedCardsArray(newArray);
+        setIsLiked(false)
       })
       .catch((err) => alert(`${err} - не удалось удалить карточку`));
   }
   function handleCheckLikes() {
     mainCardsArray.map((element) => {
       let _id
+
       if (storeCardsArray.some((el) => el.movieId === element.id ? _id = el._id : false)) {
         element._id = _id
         return element
       } else {
         return element
       }
+
     });
   }
   // OTHER FUNCTIONS
@@ -198,7 +218,7 @@ function App() {
                   <Route path="/" element={<Main ><Header /></Main>} />
 
                   <Route path="/movies" element={<ProtectedRoute element={<Movies />} onCardDelete={handleCardDelete} onCardLike={handleCardLike} onFormSubmit={handleCardsFilter} cardListText={cardListText}><Header /></ProtectedRoute>} />
-                  <Route path="/saved-movies" element={<ProtectedRoute element={<SavedMovies />} onCardDelete={handleCardDelete} onFormSubmit={handleCardsFilter} onMount={getSavedCardsArray} cardListText={cardListText}><Header /></ProtectedRoute>} />
+                  <Route path="/saved-movies" element={<ProtectedRoute element={<SavedMovies />} onMount={handleShowSavedCards} onCardDelete={handleCardDelete} onFormSubmit={handleCardsFilter} cardListText={cardListText}><Header /></ProtectedRoute>} />
                   <Route path="/profile" element={<ProtectedRoute element={<Profile />} onLogOut={logOut} onChangeUser={handleUpdateUser} apiError={apiError} clearApiError={clearApiError}><Header /></ProtectedRoute>} />
 
                   <Route path="*" element={<NotFound />} />

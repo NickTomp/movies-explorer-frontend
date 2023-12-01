@@ -1,17 +1,7 @@
 import './Promo.css'
-import { useNavigate } from "react-router-dom";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 function Promo(props) {
-    const navigate = useNavigate();
-    function goToAboutProject() {
-        navigate('#about-project')
-    }
-    function goToTechs() {
-        navigate('#techs')
-    }
-    function goToAboutMe() {
-        navigate('#about-me')
-    }
     return (
         <section className='promo'>
             <div className='promo__container'>
@@ -19,13 +9,13 @@ function Promo(props) {
                 <nav className='promo__menu'>
                     <ul className='promo__buttons'>
                         <li className='promo__button-unit'>
-                            <button className='promo__button' type='button' onClick={goToAboutProject}>О проекте</button>
+                            <button className='promo__button' type='button'><AnchorLink className='promo__link' href='#about-project'> О проекте </AnchorLink> </button>
                         </li>
                         <li className='promo__button-unit'>
-                            <button className='promo__button' type='button' onClick={goToTechs}>Технологии</button>
+                            <button className='promo__button' type='button'><AnchorLink className='promo__link' href='#techs'>Технологии </AnchorLink></button>
                         </li>
                         <li className='promo__button-unit'>
-                            <button className='promo__button' type='button' onClick={goToAboutMe}>Студент</button>
+                            <button className='promo__button' type='button'><AnchorLink className='promo__link' href='#about-me'> Студент </AnchorLink></button>
                         </li>
                     </ul>
                 </nav>

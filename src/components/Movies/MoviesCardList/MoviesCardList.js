@@ -15,10 +15,12 @@ function MoviesCardList(props) {
         width > 1220 ? { show: 12, more: 3 } : width > 480 ? { show: 8, more: 2 } : { show: 5, more: 2 }
     );
     React.useEffect(() => {
-        if (props.onMyAccount) { 
-            props.onMount();
-         }
-    }, [])
+
+        if(props.onMyAccount) {
+            props.onMount(setCardsArray);
+        }
+
+    }, []);
     React.useEffect(() => {
         const handleResizeWindow = () => setTimeout(() => {
             setWidth(window.innerWidth);
@@ -37,8 +39,10 @@ function MoviesCardList(props) {
             : setCardsArray(mainCards.slice(0, showCards.show));
     }, [mainCards, showCards, savedCards])
     React.useEffect(() => {
+
         if (mainCards.length === cardsArray.length) { setMoreButton(false) }
         else { setMoreButton(true) }
+        
     }, [cardsArray])
     function addMoreCards() {
         const newShow = showCards.show + showCards.more;

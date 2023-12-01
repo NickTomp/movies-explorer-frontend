@@ -18,7 +18,9 @@
     letter-spacing: calc(50px / -25); 
     text-align: center;
 }
-
+.promo__link {
+    all: unset;
+}
 .promo__menu {
     margin: auto;
     padding-top: 151px;

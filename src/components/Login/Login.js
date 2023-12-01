@@ -12,7 +12,7 @@ function Login(props) {
     const [password, setPassword] = React.useState('');
     const [emailError, setEmailError] = React.useState('');
     const [passwordError, setPasswordError] = React.useState('');
-    
+    const [buttonDisabled, setbuttonDisabled] = React.useState('');
 
     React.useEffect(() => {
         setIsApiValid(props.apiError ? false : true)
@@ -38,7 +38,17 @@ function Login(props) {
     }
     function handleSubmit(e) {
         e.preventDefault();
-        props.onSubmit(password, email)
+        handleDisableButton();
+        if (isPasswordValid && isEmailValid) {
+            props.onSubmit(password, email)
+        } else {return false}
+
+    }
+    function handleDisableButton() {
+        setIsEmailValid(false);
+        setTimeout(() => {
+            setIsEmailValid(true)
+        }, 2000);
     }
     function handleClearApiError() {
         props.clearApiError();

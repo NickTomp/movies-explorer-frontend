@@ -1,19 +1,19 @@
 import './MoviesCard.css'
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import SavedImg from '../../../images/filmHasBeenSaved.svg';
 import deleteImg from '../../../images/deleteSavedFilm.svg';
 
 function MoviesCard(props) {
     const [isLiked, setIsLiked] = useState('_id' in props.el ? true : false );
+
     function likeCard() {
-        props.onCardLike(props.el.country, props.el.director, props.el.duration, props.el.year, props.el.description, `https://api.nomoreparties.co${props.el.image.url}`, props.el.trailerLink, props.el.nameRU, props.el.nameEN, `https://api.nomoreparties.co${props.el.image.formats.thumbnail.url}`, props.el.id);
-        setIsLiked(true)
+        props.onCardLike(setIsLiked, props.el.country, props.el.director, props.el.duration, props.el.year, props.el.description, `https://api.nomoreparties.co${props.el.image.url}`, props.el.trailerLink, props.el.nameRU, props.el.nameEN, `https://api.nomoreparties.co${props.el.image.formats.thumbnail.url}`, props.el.id);
     }
+
     function deleteCard() {
-        props.onCardDelete(props.el._id);
-        setIsLiked(false)
+        props.onCardDelete(setIsLiked, props.el._id);
     }
+
     React.useEffect(() => {
         if (props.el.id === props.el.movieId) { setIsLiked(true) }
     }, [])
