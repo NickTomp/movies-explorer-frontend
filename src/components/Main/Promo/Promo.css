@@ -15,47 +15,56 @@
     font-weight: 400;
     font-size: 50px;
     line-height: 58px;
-    letter-spacing: calc(50px / -25); 
+    letter-spacing: calc(50px / -25);
     text-align: center;
 }
+
 .promo__link {
-    all: unset;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-decoration: none;
 }
+
 .promo__menu {
     margin: auto;
     padding-top: 151px;
     padding-bottom: 30px;
     width: fit-content;
 }
-.promo__button {
-    width: 96px;
-    min-height: 36px;
-    background-color: #303030;
-    border: none;
-    border-radius: 10px;
-    color: #fff;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-}
-.promo__button:hover {
+
+.promo__button-unit:hover {
     opacity: .8;
     cursor: pointer;
 }
-.promo__buttons{
+
+.promo__buttons {
     all: unset;
     display: flex;
     gap: 10px;
     list-style: none;
     padding: 0;
 }
+
 .promo__button-unit {
-display: inline;
+    width: 96px;
+    max-height: 36px;
+    background-color: #303030;
+    border: none;
+    border-radius: 10px;
+
+    display: inline;
 }
+
 @media screen and (max-width: 800px) {
     .promo {
         padding: 20px 20px 0;
     }
+
     .promo__text {
         padding-top: 350px;
         max-width: 680px;
@@ -64,6 +73,7 @@ display: inline;
         line-height: 52px;
         letter-spacing: calc(40px / -25);
     }
+
     .promo__menu {
         padding-top: 314px;
     }
@@ -73,6 +83,7 @@ display: inline;
     .promo {
         padding: 14px 14px 0;
     }
+
     .promo__text {
         padding-top: 220px;
         width: 292px;
@@ -80,11 +91,13 @@ display: inline;
         line-height: 37px;
         letter-spacing: calc(29px / -25);
     }
+
     .promo__menu {
         padding-top: 212px;
         padding-bottom: 17px;
         gap: 6px;
     }
+
     .promo__button {
         width: 82px;
         font-size: 10px;

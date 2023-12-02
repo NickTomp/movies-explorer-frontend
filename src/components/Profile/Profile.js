@@ -6,8 +6,9 @@ import { currentUserContext } from '../../contexts/CurrentUserContext.js'
 function Profile(props) {
     const currentUser = React.useContext(currentUserContext);
     const [isApiValid, setIsApiValid] = React.useState(props.apiError ? false : true);
-    const [isNameValid, setIsNameValid] = React.useState(true);
-    const [isEmailValid, setIsEmailValid] = React.useState(true);
+    const [isNameValid, setIsNameValid] = React.useState(false);
+    const [isEmailValid, setIsEmailValid] = React.useState(false);
+    const [isDisabled, setIsDisabled] = React.useState(true);
     const [nameError, setNameError] = React.useState('');
     const [emailError, setEmailError] = React.useState('');
     const [name, setName] = React.useState('');
@@ -15,7 +16,18 @@ function Profile(props) {
     React.useEffect(() => {
         setName(currentUser.name);
         setEmail(currentUser.email);
+
     }, []);
+    React.useEffect(() => {
+        if   (( isEmailValid && email !== currentUser.email && name === currentUser.name && nameError === '' ) || ( isNameValid && name !== currentUser.name && email === currentUser.email && emailError === '' )) {
+            setIsDisabled(false)
+        }
+        else if ((isEmailValid && isNameValid)) {
+            setIsDisabled(false)
+        } else {setIsDisabled(true)}
+    }, [name, email])
+
+    
     React.useEffect(() => {
         setIsApiValid(props.apiError ? false : true)
     }, [props.apiError])
@@ -59,17 +71,14 @@ function Profile(props) {
         e.preventDefault();
         handleDisableButton();
 
-        if (isEmailValid && isNameValid) {
+        if (!isDisabled) {
             props.onChangeUser(name, email);
             props.clearApiError();
         } else { return false }
 
     }
     function handleDisableButton() {
-        setIsEmailValid(false);
-        setTimeout(() => {
-            setIsEmailValid(true)
-        }, 2000);
+        setIsDisabled(true);
     }
     return (
         <main>
@@ -110,7 +119,7 @@ function Profile(props) {
                 </form>
                 <div className='profile__buttons'>
                     <p className={isApiValid ? 'profile__api-error register__form-error' : 'profile__api-error register__form-error register__form-error_active'}>{props.apiError}</p>
-                    <button disabled={!isEmailValid && !isNameValid} type='button' className={(isEmailValid && isNameValid) ? 'profile__button profile__edit-button' : 'profile__button profile__edit-button profile__edit-button_disabled'} onClick={editProfile}>Редактировать</button>
+                    <button disabled={isDisabled} type='button' className={!isDisabled ? 'profile__button profile__edit-button' : 'profile__button profile__edit-button profile__edit-button_disabled'} onClick={editProfile}>Редактировать</button>
                     <button type='button' className='profile__button profile__logout-button' onClick={logOut}>Выйти из аккаунта</button>
                 </div>
             </section>

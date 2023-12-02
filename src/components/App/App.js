@@ -35,7 +35,7 @@ function App() {
   const [savedCardsArray, setSavedCardsArray] = React.useState([]);
   // EFFECTS
   React.useEffect(() => {
-    handleValidate();
+    handleValidate('/');
     getInitCardsArray();
     getSavedCardsArray();
   }, [])
@@ -52,7 +52,7 @@ function App() {
       .then(() => {
         mainApi.authorize(password, email)
           .then(() => {
-            handleValidate();
+            handleValidate('/movies');
             clearApiError();
           })
           .then(() => {
@@ -64,11 +64,8 @@ function App() {
   function handleLogin(password, email) {
     mainApi.authorize(password, email)
       .then(() => {
-        handleValidate();
+        handleValidate('/movies');
         clearApiError();
-      })
-      .then(() => {
-        navigate('/movies', { replace: true });
       })
       .catch((err) => setApiError(`${err}`));
   }
@@ -81,7 +78,7 @@ function App() {
       })
       .catch((err) => setApiError(`${err}`));
   }
-  function handleValidate() {
+  function handleValidate(redirectTo) {
     mainApi.getUserInfo()
       .then((data) => {
         setIsLoggedIn(true);
@@ -89,7 +86,7 @@ function App() {
         getSavedCardsArray();
       })
       .then(() => {
-        navigate('/', { replace: true });
+        navigate(`${redirectTo}`, { replace: true });
       })
       .catch((err) => alert(`${err} - не удалось авторизоваться, выполните вход!`));
   }
@@ -170,9 +167,24 @@ function App() {
             }
           }
         }
+        const newSavedObject = {
+          "_id": newCard.data._id,
+          "id": newCard.data.movieId,
+          "nameRU": newCard.data.nameRU,
+          "nameEN": newCard.data.nameEN,
+          "director": newCard.data.director,
+          "country": newCard.data.country,
+          "year": newCard.data.year,
+          "duration": newCard.data.duration,
+          "description": newCard.data.description,
+          "trailerLink": newCard.data.trailerLink,
+          "image": newCard.data.image,
+          "thumbnail": newCard.data.thumbnail,
+          
+        }
         setMainCardsArray(mainCardsArray.map((c) => c.id === movieId ? newCardObject : c));
-        getSavedCardsArray();
-        setIsLiked(true)
+        storeCardsArray.push(newSavedObject);
+        setIsLiked(true);
       })
       .catch((err) => alert(`${err} - не удалось сохранить карточку`));
   }

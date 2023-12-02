@@ -9,13 +9,13 @@ function Promo(props) {
                 <nav className='promo__menu'>
                     <ul className='promo__buttons'>
                         <li className='promo__button-unit'>
-                            <button className='promo__button' type='button'><AnchorLink className='promo__link' href='#about-project'> О проекте </AnchorLink> </button>
+                        <AnchorLink className='promo__link' href='#about-project'> О проекте </AnchorLink>
                         </li>
                         <li className='promo__button-unit'>
-                            <button className='promo__button' type='button'><AnchorLink className='promo__link' href='#techs'>Технологии </AnchorLink></button>
+                            <AnchorLink className='promo__link' href='#techs'>Технологии </AnchorLink>
                         </li>
                         <li className='promo__button-unit'>
-                            <button className='promo__button' type='button'><AnchorLink className='promo__link' href='#about-me'> Студент </AnchorLink></button>
+                            <AnchorLink className='promo__link' href='#about-me'> Студент </AnchorLink>
                         </li>
                     </ul>
                 </nav>
