@@ -1,0 +1,145 @@
+.profile {
+    background-color: #202020;
+}
+
+.profile__header {
+    width: fit-content;
+    margin: 0 auto;
+    padding-top: 74px;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.profile__content {
+    padding-top: 125px;
+    margin: 0 auto;
+    width: 410px;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 14px;
+}
+
+.profile__data {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.profile__data:nth-of-type(2) {
+    position: relative;
+    margin-top: 16px;
+    height: 30px;
+    border-top: solid 1px #424242;
+}
+
+.profile__data:nth-of-type(2)::before {
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+    width: 100%;
+    min-height: 1px;
+    border: solid 1px #424242;
+}
+
+.profile__text {
+    margin: auto 0 0 0;
+}
+
+.profile__input {
+    border: none;
+    background-color: inherit;
+    color: #fff;
+    text-align: end;
+    max-height: 14px;
+    margin-top: auto;
+}
+
+.profile__input:focus {
+    outline: none;
+    border: solid 1px rgb(255, 255, 196);
+    border-radius: 3px;
+}
+
+.profile__buttons {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 220px;
+    padding-bottom: 70px;
+    width: 410px;
+}
+
+.profile__api-error {
+    margin-top: 1px;
+}
+
+.profile__button {
+    border: none;
+    background-color: inherit;
+    padding: 0;
+    width: 100%;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.profile__button:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.profile__edit-button {
+    color: #fff;
+    font-weight: 400;
+}
+
+.profile__edit-button_disabled {
+    color: grey;
+}
+
+.profile__edit-button_disabled:hover {
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.profile__logout-button {
+    color: #ee3465;
+    font-weight: 500;
+    margin-top: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .profile__header {
+        padding-top: 236px;
+    }
+
+    .profile__content {
+        padding-top: 96px;
+    }
+
+    .profile__buttons {
+        padding-top: 210px;
+        padding-bottom: 269px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .profile__header {
+        padding-top: 70px;
+    }
+
+    .profile__content {
+        padding-top: 80px;
+        width: 260px;
+    }
+
+    .profile__buttons {
+        padding-top: 379px;
+        padding-bottom: 40px;
+        width: 260px;
+    }
+
+    .profile__button {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
