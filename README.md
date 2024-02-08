@@ -45,7 +45,7 @@
 
 ## Ссылка на реализованный сайт
 
-<https://movies.ktomp.nomoredomainsrocks.ru>
+<https://movies.ktomp.ru>
 
 ## Ссылка на макет
 
